@@ -1,8 +1,16 @@
+/*
+  Quiz SERVER
+  index.js
+*/
+
 var express = require('express');
 var router = express.Router();
 // const passport = require('../lib/auth');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+
+
+// calls SignUp from  ../lib/auth.js
 
 router.post(
     '/signup',
@@ -16,6 +24,9 @@ router.post(
       });
     }
 );
+
+
+// calls Login from  ../lib/auth.js
 
 router.post(
     '/login',
@@ -62,14 +73,4 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 
 
-
-
-// var express = require('express');
-// var router = express.Router();
-//
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-//
-// module.exports = router;
+/* END */

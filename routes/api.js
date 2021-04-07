@@ -1,3 +1,8 @@
+/*
+  Quiz SERVER
+  API.js
+*/
+
 var express = require('express');
 var router = express.Router();
 const {Category, Question, Answer, User} = require('../lib/models');
