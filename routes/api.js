@@ -48,7 +48,7 @@ router.get(
 );
 
 //  Does this match  correct URL?  was : /categories
-router.get('/api/v1/categories', async function(req, res, next) {
+router.get('/categories', async function(req, res, next) {
     console.log('req.user is', req.user);
     // write code like find the user where the email id is this
     // if user exists, find all categories/questions that belong to a user, Question.findAll({where: userId: user.id});
@@ -57,27 +57,27 @@ router.get('/api/v1/categories', async function(req, res, next) {
     res.json(categories);
 });
 
-router.post('api/v1/categories/:categoryId/questions', async function(req, res, next) {
+router.post('/categories/:categoryId/questions', async function(req, res, next) {
     let body = req.body;
     body.categoryId = req.params.categoryId;
     let question = await Question.create(body);
     res.json(question);
 });
 
-router.get('/api/v1/categories/:categoryId/questions', async function(req, res, next) {
+router.get('/categories/:categoryId/questions', async function(req, res, next) {
     console.log('req.query.userId', req.query.userId)
     let questions = await Question.findAll({where: {categoryId: req.params.categoryId, userId: req.query.userId}, include: [{model: Answer}]});
     res.json(questions);
 });
 
-router.post('/api/v1/categories/:categoryId/questions/:questionId/answers', async function(req, res, next) {
+router.post('/categories/:categoryId/questions/:questionId/answers', async function(req, res, next) {
     let body = req.body;
     body.questionId = req.params.questionId;
     let answer = await Answer.create(body);
     res.json(answer);
 });
 
-router.get('/api/v1/categories/:categoryId/questions/:questionId/answers', async function(req, res, next) {
+router.get('/categories/:categoryId/questions/:questionId/answers', async function(req, res, next) {
     let answers = await Answer.findAll({where: {questionId: req.params.questionId}});
     res.json(answers);
 });
