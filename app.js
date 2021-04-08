@@ -14,6 +14,7 @@ require('./lib/seed')
 require('./lib/models')
 var cors = require('cors')
 
+// router functions
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
@@ -34,13 +35,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ROUTES
+
+// API ROUTES
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1', passport.authenticate('jwt', { session: false }),  apiRouter);
 
 
-// Error handling
+
+
+// ERROR handling
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

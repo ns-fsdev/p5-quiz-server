@@ -1,6 +1,9 @@
 /*
   Quiz SERVER
-  index.js
+  INDEX.js
+
+  index.js -  Authentication routes, which call ../lib/auth.js
+
 */
 
 var express = require('express');
