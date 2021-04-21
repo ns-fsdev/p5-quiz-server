@@ -4,8 +4,8 @@
 ##  Project 05 - Capstone
 
 
-##  ![logo]
-    [logo]: https://github.com/ns-fsdev/p5-quiz-server/img/App_objects.png
+##   
+    ![App Objects](https://github.com/ns-fsdev/p5-quiz-server/img/App_objects.png)
 
 ##
 
