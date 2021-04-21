@@ -78,7 +78,7 @@
 
     Client  : HTML , ReactJS for UI and single page application
               Antdesign for ReactJS styling and positioning.
-              Javascript to make client API requests.
+              Javascript to make client API requests to the server.
 
 
 
